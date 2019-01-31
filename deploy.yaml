@@ -80,7 +80,6 @@ metadata:
   name: hyjazloudin-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    ingress.kubernetes.io/query-routing: default/query-routing
 spec:
   rules:
   - http:
