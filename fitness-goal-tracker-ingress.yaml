@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hyjazloudin-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: hloudin.server.com
+    http:
+      paths:
+      - path: /server
+        backend:
+          serviceName: server-service
+          servicePort: 80
+  - host: hloudin.client.com
+    http:
+      paths:
+      - backend:
+          serviceName: client-service
+          servicePort: 80
