@@ -82,12 +82,16 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - http:
+  - host: hloudin.server.local
+    http:
       paths:
       - path: /server
         backend:
           serviceName: server-service
           servicePort: 80
+  - host: hloudin.client.local
+    http:
+      paths:
       - path: /
         backend:
           serviceName: client-service
