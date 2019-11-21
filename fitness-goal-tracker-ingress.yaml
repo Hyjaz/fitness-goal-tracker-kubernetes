@@ -9,6 +9,7 @@ spec:
   - host: hloudin.server.com
     http:
       paths:
+      # when we get traffic on the endpoint hloudin.server.com/server we route it to our server-service service
       - path: /server
         backend:
           serviceName: server-service
@@ -16,6 +17,7 @@ spec:
   - host: hloudin.client.com
     http:
       paths:
+      # when we get traffic on the endpoint hloudin.client.com we route it to our client-server service
       - backend:
           serviceName: client-service
           servicePort: 80
